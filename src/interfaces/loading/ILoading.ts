@@ -1,0 +1,1 @@
+export type ILoading = 'idle' | 'pending' | 'finished' | 'error';
