@@ -30,8 +30,14 @@ const initialState: IShoeInitialState = {
 
 export const fetchOnDemandShoes = createAsyncThunk("shoe/fetchOnDemandShoes", async () => {
     try {
-        const response = await axios(`${apiUrl}/api/shoes/on-demand`);
-        const data = response.data;
+        const response = await axios(`${apiUrl}/api/shoes/on-demand`, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        console.log(response.data);
+        const data = response.data.shoes;
+        console.log(data)
         return data;
     } catch (error: any) {
         return error.message;
@@ -39,8 +45,14 @@ export const fetchOnDemandShoes = createAsyncThunk("shoe/fetchOnDemandShoes", as
 })
 
 export const fetchInStockShoes = createAsyncThunk("shoe/fetchInStockShoes", async () => {
-    const response = await axios(`${apiUrl}/api/shoes/in-stock`);
-    const data = response.data;
+    const response = await axios(`${apiUrl}/api/shoes/in-stock`, { 
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        console.log(response);
+        const data = response.data.shoes;
+        console.log(data)
     return data;
 })
 
