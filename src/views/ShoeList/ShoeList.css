@@ -1,0 +1,12 @@
+.shoe-list {
+    width: 95%;
+    margin: 5% auto;
+}
+
+@media(min-width: 768px) {
+
+    .shoe-list {
+        display: flex;
+    }
+    
+}

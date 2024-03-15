@@ -5,6 +5,7 @@ import { fetchOnDemandShoes, fetchInStockShoes } from "../../redux/features/shoe
 import { AppDispatch, RootState } from "../../redux/store/reduxStore";
 import { useSelector } from "react-redux";
 import { ShoeCard } from "../../components/shoe-card/ShoeCard";
+import './ShoeList.css';
 
 
 export const ShoeList = () => {
@@ -65,6 +66,7 @@ export const ShoeList = () => {
                 <ul className="shoe-list">
                     {
                         shoes.map((shoe, i) => {
+                            console.log(shoe)
                             return (
                                 <ShoeCard shoe={shoe} key={`${shoe.id}-${i}`}/>
                             )

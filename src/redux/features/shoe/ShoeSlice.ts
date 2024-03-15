@@ -11,6 +11,7 @@ const shoeInitState: IShoe = {
     id: 0,
     name: '',
     createdAt: null,
+    colorName: '',
     brand: {
         id: 0,
         name: ''
@@ -35,9 +36,7 @@ export const fetchOnDemandShoes = createAsyncThunk("shoe/fetchOnDemandShoes", as
                 'Content-Type': 'application/json'
             }
         });
-        console.log(response.data);
         const data = response.data.shoes;
-        console.log(data)
         return data;
     } catch (error: any) {
         return error.message;
@@ -50,9 +49,7 @@ export const fetchInStockShoes = createAsyncThunk("shoe/fetchInStockShoes", asyn
                 'Content-Type': 'application/json'
             }
         });
-        console.log(response);
         const data = response.data.shoes;
-        console.log(data)
     return data;
 })
 
