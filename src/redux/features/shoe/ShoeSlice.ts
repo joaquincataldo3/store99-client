@@ -2,8 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { IShoeInitialState } from "../../../interfaces/shoe/IShoeInitialState";
 import axios from "axios";
 import { IShoe } from "../../../interfaces/shoe/IShoe";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/reduxStore";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 

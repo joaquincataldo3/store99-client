@@ -2,25 +2,19 @@
 
 .shoe-card {
     border: 1px solid var(--light-grey);
-    width: 85%;
+    width: 75%;
     margin: 5% auto;
-    height: 500px; 
-    max-width: 390px;
+    width: 390px;
 }
 
 .shoe-img-container {
     width: 100%;
-    height: 65%;
 }
 
 .shoe-img-container img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-}
-
-.shoe-info-container {
-    height: 35%;
 }
 
 .shoe-titles-container {
@@ -34,6 +28,10 @@
 
 .shoe-brand-name {
     margin-top: 2%;
+}
+
+.shoe-info-container {
+    padding: 0 5px;
 }
 
 .shoe-stock-container {
@@ -52,3 +50,44 @@
     border-radius: 10px;
 }
 
+.buy-shoe-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 20%;
+}
+
+.buy-shoe {
+    width: 60%;
+    background-color: #10d60f;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+@media(min-width: 768px) {
+
+    .shoe-card {
+        width: 45%;
+    }
+    
+}
+
+@media(min-width: 1024px) {
+
+    .shoe-card {
+        width: 33%;
+    }
+    
+}
+
+@media(min-width: 1250px) {
+
+    .shoe-card {
+        width: 23%;
+    }
+    
+}

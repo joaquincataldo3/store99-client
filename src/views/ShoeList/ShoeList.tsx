@@ -35,7 +35,7 @@ export const ShoeList = () => {
     }, [param, renderCount]);
 
     const handleFetchList = (param: string) => {
-        if (param === 'demand') {
+        if (param === 'encargue') {
             dispatch(fetchOnDemandShoes());
         } else if (param === 'stock') {
             dispatch(fetchInStockShoes());
@@ -66,9 +66,8 @@ export const ShoeList = () => {
                 <ul className="shoe-list">
                     {
                         shoes.map((shoe, i) => {
-                            console.log(shoe)
                             return (
-                                <ShoeCard shoe={shoe} key={`${shoe.id}-${i}`}/>
+                                <ShoeCard shoe={shoe} key={`${shoe.id}-${i}`} param={param}/>
                             )
                         })
                     }

@@ -1,5 +1,6 @@
 :root {
-    --light-grey: #cdcdcd
+    --light-grey: #cdcdcd;
+    --regular-blue: #03396c;
 }
 
 * {
@@ -7,4 +8,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Asap Condensed", sans-serif;
+}
+
+main {
+    padding: 16px;
 }
