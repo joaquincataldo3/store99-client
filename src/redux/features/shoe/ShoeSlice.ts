@@ -27,6 +27,21 @@ const initialState: IShoeInitialState = {
     isFetchingShoeLoading: 'idle'
 };
 
+export const fetchOneShoe = createAsyncThunk("shoe/fetchOneShoe", async (shoeId: string) => {
+    try {
+        const response = await axios(`${apiUrl}/api/shoes/${shoeId}`, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = response.data.shoe;
+        return data;
+    } catch (error: any) {
+        return error.message;
+    }
+   
+})
+
 export const fetchOnDemandShoes = createAsyncThunk("shoe/fetchOnDemandShoes", async () => {
     try {
         const response = await axios(`${apiUrl}/api/shoes/on-demand`, {
@@ -78,6 +93,18 @@ const shoeSlice = createSlice({
             state.isFetchingInStockShoesLoading = "finished"
             const data = action.payload;
             state.onDemandShoes = data;
+            state.isFetchingInStockShoesLoading = 'idle';
+        })
+        builder.addCase(fetchInStockShoes.pending, (state) => {
+            state.isFetchingShoeLoading = "pending"
+        })
+        builder.addCase(fetchInStockShoes.rejected, (state) => {
+            state.isFetchingShoeLoading = "error";
+        })
+        builder.addCase(fetchInStockShoes.fulfilled, (state, action) => {
+            state.isFetchingInStockShoesLoading = "finished"
+            const data = action.payload;
+            state.shoe = data;
             state.isFetchingInStockShoesLoading = 'idle';
         })
     }
